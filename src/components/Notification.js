@@ -7,10 +7,10 @@ const Notification = ({ message, isError }) => {
 
   if(isError) {
     return (
-        <div className="error">
-          ERROR: {message}
-        </div>
-      )
+      <div className="error">
+        ERROR: {message}
+      </div>
+    )
   }
 
   return (
