@@ -35,7 +35,6 @@ const update = async newObject => {
   const config = {
     headers: { Authorization: token },
   }
-  console.log("id: " + newObject.id)
   const response = await axios.put(`${baseUrl}/${newObject.id}`, newObject, config)
   return response.data
 }

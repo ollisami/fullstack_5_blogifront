@@ -135,8 +135,8 @@ const App = () => {
     blogObject.likes = blogObject.likes + 1
     event.preventDefault()
     blogService
-      .update(blogObject).then(returnedBlog => {
-        setNotificationMessage(`blog updated`)
+      .update(blogObject).then(() => {
+        setNotificationMessage('blog updated')
         setTimeout(() => {
           setNotificationMessage(null)
         }, 5000)
@@ -150,7 +150,7 @@ const App = () => {
         blogService.getAll().then(blogs =>
           setBlogs( blogs )
         )
-        setNotificationMessage(`blog deleted`)
+        setNotificationMessage('blog deleted')
         setTimeout(() => {
           setNotificationMessage(null)
         }, 5000)
@@ -167,16 +167,16 @@ const App = () => {
   const renderBlogs = () => (
     <div>
       {blogs
-      .sort((a, b) => b.likes - a.likes)
-      .map(blog =>
-        <Blog
-          key={blog.id}
-          blog={blog}
-          update={updateBlog}
-          remove={removeBlog}
-          username={user.username}
-         />
-      )}
+        .sort((a, b) => b.likes - a.likes)
+        .map(blog =>
+          <Blog
+            key={blog.id}
+            blog={blog}
+            update={updateBlog}
+            remove={removeBlog}
+            username={user.username}
+          />
+        )}
     </div>
   )
 
