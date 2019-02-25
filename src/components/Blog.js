@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Blog = ({ blog,update, remove, username }) => {
+const Blog = ({ blog, update, remove, username }) => {
   const [showInfo, setShowInfo] = useState(false)
 
   const blogStyle = {
@@ -45,7 +45,7 @@ const Blog = ({ blog,update, remove, username }) => {
 
   return (
     <div style={blogStyle}>
-      <div onClick={toggleShowInfo}>
+      <div className='togglableContent' onClick={toggleShowInfo}>
         {blog.title} {blog.author}
         {showInfo && renderInfo(blog,update,remove, username)}
       </div>
