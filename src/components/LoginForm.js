@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 
 const LoginForm = ({
   handleSubmit,
-  handleUsernameChange,
-  handlePasswordChange,
   username,
   password
 }) => {
@@ -15,19 +13,19 @@ const LoginForm = ({
         <div>
           käyttäjätunnus
           <input
-            type="text"
-            value={username}
-            name="Username"
-            onChange={handleUsernameChange}
+            type     = {username.type}
+            value    = {username.value}
+            name     = "Username"
+            onChange = {username.onChange}
           />
         </div>
         <div>
           salasana
           <input
-            type="password"
-            value={password}
-            name="Password"
-            onChange={handlePasswordChange}
+            type     = {password.type}
+            value    = {password.value}
+            name     = "Password"
+            onChange = {password.onChange}
           />
         </div>
         <button type="submit">kirjaudu</button>
@@ -38,10 +36,6 @@ const LoginForm = ({
 
 LoginForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  handleUsernameChange: PropTypes.func.isRequired,
-  handlePasswordChange: PropTypes.func.isRequired,
-  username: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired
 }
 
 export default LoginForm

@@ -47,7 +47,7 @@ const Blog = ({ blog, update, remove, username }) => {
     <div style={blogStyle}>
       <div className='togglableContent' onClick={toggleShowInfo}>
         {blog.title} {blog.author}
-        {showInfo && renderInfo(blog,update,remove, username)}
+        {showInfo && renderInfo(blog,update,remove,username)}
       </div>
     </div>
   )
